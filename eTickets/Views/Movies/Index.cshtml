@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Movie>
+
+@{
+    ViewData["Title"] = "List of Movies";
+}
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="card" style="width: 18rem;">
+            <img src="@item.ImageURL" class="card-img-top" alt="@item.Name">
+            <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+                <p class="card-text">@item.Description</p>
+                <p class="card-text">@item.Cinema</p>
+                <p clclass="card-text">@item.MovieCategory</p>
+                <a class="btn btn-primary" float-right" asp-action="Details" asp-route-id="@item.Id">Details</a>
+            </div>
+        </div>
+    }
+</div>
+
+                                
